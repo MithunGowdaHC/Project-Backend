@@ -7,14 +7,15 @@ import app from "./app.js";
 dotenv.config({
   path: "./env",
 });
-connectDB().then(() => {
-  app.listen(process.env.PORT || 8000, () => {
-    console.log(`App is listening at port ${process.env.PORT}`);
+connectDB()
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`App is listening at port ${process.env.PORT || 8000}  `);
+    });
+  })
+  .catch((error) => {
+    console.log("Error");
   });
-}).catch((error)=>{
-  console.log("Error")
-
-});
 /*
 import express from "express"
 
